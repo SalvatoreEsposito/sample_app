@@ -26,6 +26,34 @@ it "should have a Home page at '/'" do
     get '/signup'
     response.should have_selector('title', :content => "Sign up")
   end
+
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "About"
+    response.should have_selector('title', :content => "About")
+  end
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "Help"
+    response.should have_selector('title', :content => "Help")
+  end
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "Contact"
+    response.should have_selector('title', :content => "Contact")
+  end
+  it "should have the right links on the layout" do
+  visit root_path
+  click_link "Home"
+  response.should have_selector('title', :content => "Sample App")
+  end
+  it "should have the right links on the layout" do
+  visit root_path
+  click_link "Sign up now!"
+  response.should have_selector('title', :content => "Sign up")
+  end
+
+
  
 #  describe "GET /layout_links" do
 #    it "works! (now write some real specs)" do
